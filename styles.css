@@ -2,22 +2,23 @@
 html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 body {
     font-family: Papyrus, fantasy;
-    margin: 0;
-    padding: 0;
-    padding-top: 15rem;
+    padding-top: 15rem; /* Adjust padding for fixed header */
     background-color: #000000;
     color: #333;
-    font-size: calc(1vw + 1vh + 0.5vmin); /* Base font size responsive */
+    font-size: calc(1vw + 1vh + 0.5vmin); /* Responsive font size */
 }
 
 /* Header Styles */
 header {
     background-image: url(images/background.png);
-    background-size: cover; /* Adjust background image to cover the entire area */
+    background-size: cover; /* Ensure the entire header is covered */
+    background-position: center; /* Center the background image */
     color: #000000;
     padding: 1rem 0;
     text-align: center;
@@ -27,6 +28,7 @@ header {
     width: 100%;
     z-index: 1000;
     border-bottom: solid black;
+    box-sizing: border-box; /* Ensure padding is considered in width */
 }
 
 header h1 {
@@ -39,8 +41,8 @@ header h1 {
 
 nav {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
     justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
     padding: 0 1rem;
 }
 
@@ -56,7 +58,7 @@ nav a {
 
 /* Container Styles */
 .container {
-    width: 90%; /* Increase width for better visibility on smaller screens */
+    width: 80%; /* Adjust for responsiveness */
     margin: 2rem auto;
     padding: 2rem;
     background-color: #fff;
@@ -121,6 +123,10 @@ footer {
 
 /* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
+    header {
+        padding: 1rem; /* Maintain padding for header */
+    }
+
     header h1 {
         font-size: 1.5rem; /* Smaller font size for header */
     }
@@ -131,7 +137,7 @@ footer {
     }
 
     .container {
-        width: 100%; /* Full-width container on smaller screens */
+        width: 90%; /* Slightly wider container for better visibility */
         padding: 1rem; /* Adjust padding for smaller screens */
     }
 
