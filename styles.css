@@ -17,8 +17,9 @@ body {
 /* Header Styles */
 header {
     background-image: url(images/background.png);
-    background-size: cover; /* Adjust to cover the entire header */
+    background-size: cover; /* Ensure the image covers the header area */
     background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
     color: #000000;
     padding: 1rem 0;
     text-align: center;
@@ -28,12 +29,13 @@ header {
     width: 100%;
     z-index: 1000;
     border-bottom: solid black;
+    height: 30vh; /* Responsive height based on viewport height */
 }
 
 header h1 {
     font-family: Papyrus, fantasy;
     font-weight: bolder;
-    font-size: calc(1.5rem + 1.5vw); /* Smaller, responsive font size */
+    font-size: calc(1.5rem + 4vw); /* Responsive font size */
     margin: 0;
 }
 
@@ -47,10 +49,10 @@ nav a {
     color: #fff;
     font-family: Papyrus, fantasy;
     font-weight: bold;
-    padding: 0.5rem 1rem; /* Smaller padding */
+    padding: 0.5rem 1rem; /* Adjust padding */
     text-decoration: none;
     transition: background-color 0.3s;
-    font-size: calc(0.8rem + 0.5vw); /* Smaller, responsive font size */
+    font-size: calc(0.8rem + 1vw); /* Responsive font size */
 }
 
 nav a:hover {
@@ -60,22 +62,32 @@ nav a:hover {
 /* Mobile Styles */
 @media (max-width: 768px) {
     header {
-        background-size: cover; /* Maintain cover for background image */
-        height: 200px; /* Adjust height for mobile */
-        background-attachment: fixed; /* Prevent background from repeating */
+        height: 40vh; /* Adjust height for mobile screens */
     }
 
     header h1 {
-        font-size: calc(1.2rem + 2vw); /* Smaller font size on mobile */
-    }
-
-    nav {
-        padding: 0.5rem 0;
+        font-size: calc(1rem + 5vw); /* Smaller, responsive font size */
     }
 
     nav a {
-        font-size: calc(0.6rem + 1vw); /* Smaller font size on mobile */
+        font-size: calc(0.6rem + 2vw); /* Smaller, responsive font size */
         padding: 0.5rem; /* Adjust padding */
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    header {
+        height: 50vh; /* Further adjust height for very small screens */
+    }
+
+    header h1 {
+        font-size: calc(0.8rem + 6vw); /* Further decrease font size */
+    }
+
+    nav a {
+        font-size: calc(0.5rem + 2vw); /* Further decrease font size */
+        padding: 0.3rem; /* Further adjust padding */
     }
 }
 
