@@ -166,9 +166,7 @@ footer {
     font-family: Papyrus, fantasy;
     font-size: 3rem;
     text-align: center; /* Center text in these sections */
-    max-width: 100%;
-    height: auto;
-    width: auto;
+    max-width: 50%;
 }
 
 .about-section p, .container p {
