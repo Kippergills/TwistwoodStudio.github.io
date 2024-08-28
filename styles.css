@@ -215,3 +215,45 @@ footer {
     font-size: calc(2rem + 2vw); /* Responsive font size */
     margin-bottom: 1rem;
 }
+
+/* Responsive Adjustments for Small Screens */
+@media (max-width: 768px) {
+    /* Header and Navigation */
+    header {
+        padding: 0.5rem 0;
+    }
+    
+    nav a {
+        font-size: calc(0.8rem + 0.5vw);
+        padding: 0.5rem;
+    }
+    
+    /* Container and Text */
+    .container {
+        width: 90%;
+        padding: 1rem;
+    }
+    
+    /* Technique Sections */
+    .technique-section {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .technique-section:nth-of-type(even) {
+        flex-direction: column; /* Stack elements vertically */
+    }
+    
+    .technique-text, .technique-image, .technique-video {
+        padding: 0.5rem;
+    }
+    
+    .technique-description h2 {
+        font-size: calc(1.5rem + 1.5vw);
+    }
+    
+    /* Image and Video Scaling */
+    .technique-image img, .technique-video video {
+        width: 100%;
+        max-width: 100%;
+    }
+}
