@@ -106,20 +106,14 @@ footer {
 .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between; /* Distribute columns evenly */
     margin: 20px 0;
 }
 
 .column {
     flex: 1 1 45%; /* Allow columns to take up to 45% of the container */
     padding: 5px;
-    max-width: 100%; /* Ensure columns don't exceed the container width */
-}
-
-.column img {
-    width: 100%;
-    height: auto;
-    display: block;
+    max-width: 45%; /* Ensure columns don’t exceed 45% of the width */
 }
 
 /* Media Queries */
@@ -137,8 +131,13 @@ footer {
         padding: 0.5rem; /* Adjust padding */
     }
 
+    .row {
+        flex-direction: column; /* Stack columns vertically on mobile */
+    }
+
     .column {
         flex: 1 1 100%; /* Columns take full width on smaller screens */
+        max-width: 100%; /* Ensure columns take full width */
     }
 
     .image-container img, .contact-image {
@@ -176,7 +175,7 @@ footer {
     margin-top: 2rem;
 }
 
-/*Image Container Styles */
+/* Image Container Styles */
 .image-container {
     display: flex;
     flex-direction: column;
