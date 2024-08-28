@@ -17,7 +17,8 @@ body {
 /* Header Styles */
 header {
     background-image: url(images/background.png);
-    background-size: 100% 100%;
+    background-size: cover; /* Adjust background size */
+    background-position: center; /* Center background image */
     color: #000000;
     padding: 1rem 0;
     text-align: center;
@@ -33,6 +34,7 @@ header h1 {
     font-family: Papyrus, fantasy;
     font-weight: bolder;
     font-size: calc(2rem + 2vw); /* Responsive font size */
+    margin: 0; /* Remove default margin */
 }
 
 nav {
@@ -122,6 +124,15 @@ footer {
 
 /* Media Queries */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: calc(1.5rem + 2vw); /* Smaller font size on mobile */
+    }
+
+    nav a {
+        font-size: calc(0.8rem + 0.5vw); /* Smaller font size on mobile */
+        padding: 0.5rem; /* Adjust padding */
+    }
+
     .column {
         flex: 1 1 100%; /* Columns take full width on smaller screens */
     }
@@ -129,6 +140,10 @@ footer {
     .image-container img, .contact-image {
         max-width: 100%; /* Ensure images scale down properly */
         height: auto; /* Maintain aspect ratio */
+    }
+    
+    header {
+        padding: 0.5rem 0; /* Adjust padding for mobile */
     }
 }
 
