@@ -22,10 +22,10 @@ img {
 /* Header Styles */
 header {
     background-image: url(images/background.png);
-    background-size: contain; /* Maintain aspect ratio */
+    background-size: cover; /* Ensure background covers the header */
     background-position: center;
     background-repeat: no-repeat;
-    height: auto; /* Allow height to adjust based on the width */
+    height: 15rem; /* Fixed height for consistency */
     padding: 1rem 0;
     text-align: center;
     position: fixed;
@@ -45,6 +45,7 @@ header h1 {
 nav {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 nav a {
@@ -63,7 +64,8 @@ nav a:hover {
 
 /* Container Styles */
 .container {
-    width: 80%;
+    width: 90%; /* Adjusted for better margins on smaller screens */
+    max-width: 1200px;
     margin: 2rem auto;
     padding: 2rem;
     background-color: #fff;
@@ -77,6 +79,29 @@ footer {
     padding: 1rem;
     background-color: #333;
     color: #fff;
+}
+
+/* About Us and Contact Us Page */
+.about-section img, .contact-section img {
+    width: 100%; /* Ensure images fit within their container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+}
+
+.about-section, .contact-section {
+    margin: 2rem 0; /* Margin for spacing */
+}
+
+.about-section h2, .contact-section h2 {
+    font-family: Papyrus, fantasy;
+    font-size: calc(1.5rem + 2vw); /* Responsive font size */
+    margin-bottom: 1rem;
+}
+
+.about-section p, .contact-section p {
+    font-size: calc(1rem + 0.5vw); /* Responsive font size */
+    line-height: 1.6; /* Improve readability */
+    margin: 1rem 0;
 }
 
 /* Welcome Section Styles */
@@ -135,7 +160,8 @@ footer {
     }
 
     header {
-        padding: 0.5rem 0;
+        height: auto; /* Adjust header height for smaller screens */
+        padding: 1rem;
     }
 
     .technique-section {
@@ -153,6 +179,10 @@ footer {
 
     .welcome-section h2, .about-section h2, .catalogue-section h2 {
         font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    .about-section p, .contact-section p {
+        font-size: 1rem; /* Adjust font size */
     }
 }
 
