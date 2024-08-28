@@ -14,11 +14,18 @@ body {
     font-size: calc(1vw + 1vh + 0.5vmin); /* Base font size responsive */
 }
 
+img {
+    max-width: 100%;
+    height: auto; /* Ensure images scale down on smaller screens */
+}
+
 /* Header Styles */
 header {
     background-image: url(images/background.png);
-    background-size: 100% 100%;
-    color: #000000;
+    background-size: contain; /* Maintain aspect ratio */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto; /* Allow height to adjust based on the width */
     padding: 1rem 0;
     text-align: center;
     position: fixed;
@@ -101,6 +108,7 @@ footer {
     height: auto;
 }
 
+/* Row and Column Layout */
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -124,6 +132,27 @@ footer {
 @media (max-width: 768px) {
     .column {
         flex: 1 1 100%; /* Columns take full width on smaller screens */
+    }
+
+    header {
+        padding: 0.5rem 0;
+    }
+
+    .technique-section {
+        flex-direction: column;
+    }
+
+    .technique-section:nth-of-type(even) {
+        flex-direction: column;
+    }
+
+    .technique-text, .technique-image, .technique-video {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .welcome-section h2, .about-section h2, .catalogue-section h2 {
+        font-size: 1.5rem; /* Adjust heading size */
     }
 }
 
@@ -191,7 +220,7 @@ footer {
 }
 
 .technique-section:nth-of-type(even) {
-    flex-direction: row-reverse;
+    flex-direction: column;
 }
 
 .technique-text {
@@ -214,46 +243,4 @@ footer {
     font-family: Papyrus, fantasy;
     font-size: calc(2rem + 2vw); /* Responsive font size */
     margin-bottom: 1rem;
-}
-
-/* Responsive Adjustments for Small Screens */
-@media (max-width: 768px) {
-    /* Header and Navigation */
-    header {
-        padding: 0.5rem 0;
-    }
-    
-    nav a {
-        font-size: calc(0.8rem + 0.5vw);
-        padding: 0.5rem;
-    }
-    
-    /* Container and Text */
-    .container {
-        width: 90%;
-        padding: 1rem;
-    }
-    
-    /* Technique Sections */
-    .technique-section {
-        flex-direction: column; /* Stack elements vertically */
-    }
-
-    .technique-section:nth-of-type(even) {
-        flex-direction: column; /* Stack elements vertically */
-    }
-    
-    .technique-text, .technique-image, .technique-video {
-        padding: 0.5rem;
-    }
-    
-    .technique-description h2 {
-        font-size: calc(1.5rem + 1.5vw);
-    }
-    
-    /* Image and Video Scaling */
-    .technique-image img, .technique-video video {
-        width: 100%;
-        max-width: 100%;
-    }
 }
