@@ -82,6 +82,43 @@ footer {
     margin: 0 auto;
 }
 
+/* Catalogue Section Styles */
+.catalogue-section {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.catalogue-dropdown {
+    margin-top: 1rem;
+}
+
+.catalogue-dropdown select {
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Image Grid Styles */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensure 3 columns in grid */
+    gap: 1rem; /* Gap between images */
+    margin-top: 2rem;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%; /* Ensure images fit within their container */
+    height: auto; /* Maintain aspect ratio */
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     header {
@@ -102,40 +139,11 @@ footer {
         max-width: 90%; /* Adjust width to fit on smaller screens */
     }
 
+    .image-grid {
+        grid-template-columns: 1fr; /* Stack images vertically on smaller screens */
+    }
+    
     .technique-section {
         flex-direction: column; /* Stack sections vertically on smaller screens */
     }
-}
-
-/* Techniques Page Specific Styles */
-.technique-section {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
-
-.technique-section:nth-of-type(even) {
-    flex-direction: row-reverse;
-}
-
-.technique-text {
-    flex: 1;
-    padding: 1rem;
-    text-align: left;
-}
-
-.technique-image, .technique-video {
-    flex: 1;
-    padding: 1rem;
-}
-
-.technique-image img, .technique-video video {
-    width: 100%;
-    height: auto;
-}
-
-.technique-description h2 {
-    font-family: Papyrus, fantasy;
-    font-size: calc(2rem + 2vw);
-    margin-bottom: 1rem;
 }
