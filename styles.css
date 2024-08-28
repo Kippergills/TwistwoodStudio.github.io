@@ -8,43 +8,47 @@ body {
     font-family: Papyrus, fantasy;
     margin: 0;
     padding: 0;
-    padding-top: 15rem;
     background-color: #000000;
     color: #333;
-    font-size: calc(1vw + 1vh + 0.5vmin); /* Base font size responsive */
+    font-size: calc(1vw + 1vh + 0.5vmin); /* Responsive font size */
 }
 
 /* Header Styles */
 header {
     background-image: url(images/background.png);
-    background-size: 100% 100%;
+    background-size: cover; /* Cover the header with background image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-position: center; /* Center the background image */
     color: #000000;
-    padding: 1rem 0;
+    padding: 2rem 1rem; /* Adjust padding for better spacing */
     text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative; /* Allows for relative positioning of elements */
     width: 100%;
     z-index: 1000;
     border-bottom: solid black;
 }
 
+/* Banner Title Styles */
 header h1 {
     font-family: Papyrus, fantasy;
     font-weight: bolder;
     font-size: calc(2rem + 2vw); /* Responsive font size */
+    margin: 0;
+    padding: 0;
 }
 
+/* Navigation Styles */
 nav {
     display: flex;
     justify-content: center;
+    padding: 1rem 0;
 }
 
 nav a {
     color: #fff;
     font-family: Papyrus, fantasy;
     font-weight: bold;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     transition: background-color 0.3s;
     font-size: calc(1rem + 0.5vw); /* Responsive font size */
@@ -125,52 +129,36 @@ footer {
     .column {
         flex: 1 1 100%; /* Columns take full width on smaller screens */
     }
+
+    header {
+        padding: 1rem 0; /* Adjust padding for mobile */
+        background-size: contain; /* Adjust background size */
+    }
+
+    header h1 {
+        font-size: calc(1.5rem + 2vw); /* Adjust title size for mobile */
+    }
+
+    nav a {
+        padding: 0.5rem; /* Adjust button padding for mobile */
+        font-size: calc(0.8rem + 0.5vw); /* Adjust font size for mobile */
+    }
 }
 
-/* Catalogue Section Styles */
-.catalogue-section {
-    margin-top: 2rem;
-    text-align: center; /* Center catalogue section text */
-}
+@media (max-width: 480px) {
+    header {
+        padding: 0.5rem 0; /* Further adjust padding for very small screens */
+        background-size: contain; /* Scale image to fit header */
+    }
 
-.catalogue-dropdown {
-    margin-top: 1rem;
-}
+    header h1 {
+        font-size: calc(1.2rem + 2vw); /* Smaller title size */
+    }
 
-.catalogue-dropdown select {
-    font-size: 1rem;
-    padding: 0.5rem;
-    width: 100%;
-    max-width: 300px;
-}
-
-/* Image Grid Styles */
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns in grid */
-    gap: 1rem; /* Gap between images */
-    margin-top: 2rem;
-}
-
-/* Image Container Styles */
-.image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center; /* Center text in image container */
-}
-
-.image-container img {
-    width: 100%; /* Ensure images fit within their container */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent images from being too large */
-}
-
-.image-description {
-    font-size: 0.8rem;
-    color: #666;
-    text-align: center;
-    margin-top: 0.5rem;
+    nav a {
+        padding: 0.5rem 0.75rem; /* Further adjust button padding */
+        font-size: calc(0.7rem + 0.5vw); /* Further adjust font size */
+    }
 }
 
 /* Additional Styles for Specific Sections */
