@@ -17,7 +17,7 @@ body {
 /* Header Styles */
 header {
     background-image: url(images/background.png);
-    background-size: 100% 100%;
+    background-size: cover; /* Adjust background image to cover the entire area */
     color: #000000;
     padding: 1rem 0;
     text-align: center;
@@ -33,11 +33,15 @@ header h1 {
     font-family: Papyrus, fantasy;
     font-weight: bolder;
     font-size: calc(2rem + 2vw); /* Responsive font size */
+    margin: 0;
+    padding: 0 1rem;
 }
 
 nav {
     display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
     justify-content: center;
+    padding: 0 1rem;
 }
 
 nav a {
@@ -50,18 +54,14 @@ nav a {
     font-size: calc(1rem + 0.5vw); /* Responsive font size */
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
 /* Container Styles */
 .container {
-    width: 80%;
+    width: 90%; /* Increase width for better visibility on smaller screens */
     margin: 2rem auto;
     padding: 2rem;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center; /* Center content in container */
+    text-align: center;
 }
 
 /* Footer Styles */
@@ -77,11 +77,8 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Center text inside welcome-section */
-}
-
-.welcome-text {
-    width: 100%;
+    text-align: center;
+    padding: 1rem; /* Add padding for better spacing */
 }
 
 .welcome-text h2 {
@@ -94,6 +91,7 @@ footer {
 .image-container.single {
     text-align: center;
     margin: 20px 0;
+    padding: 0 1rem; /* Add padding for smaller screens */
 }
 
 .image-container.single img {
@@ -101,6 +99,7 @@ footer {
     height: auto;
 }
 
+/* Row and Column Layouts */
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -120,17 +119,43 @@ footer {
     display: block;
 }
 
-/* Media Queries */
+/* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem; /* Smaller font size for header */
+    }
+
+    nav a {
+        font-size: 1rem; /* Adjust navigation font size */
+        padding: 0.5rem; /* Reduce padding for smaller screens */
+    }
+
+    .container {
+        width: 100%; /* Full-width container on smaller screens */
+        padding: 1rem; /* Adjust padding for smaller screens */
+    }
+
     .column {
         flex: 1 1 100%; /* Columns take full width on smaller screens */
+        padding: 5px 0; /* Adjust padding for smaller screens */
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* Reduce columns to 2 */
+    }
+
+    .catalogue-dropdown select {
+        font-size: 1rem;
+        padding: 0.5rem;
+        width: 100%;
+        max-width: 100%; /* Allow dropdown to fill the width */
     }
 }
 
 /* Catalogue Section Styles */
 .catalogue-section {
     margin-top: 2rem;
-    text-align: center; /* Center catalogue section text */
+    text-align: center;
 }
 
 .catalogue-dropdown {
@@ -148,22 +173,20 @@ footer {
 .image-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns in grid */
-    gap: 1rem; /* Gap between images */
+    gap: 1rem;
     margin-top: 2rem;
 }
 
-/* Image Container Styles */
 .image-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; /* Center text in image container */
+    text-align: center;
 }
 
 .image-container img {
-    width: 100%; /* Ensure images fit within their container */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent images from being too large */
+    width: 100%;
+    height: auto;
 }
 
 .image-description {
@@ -177,11 +200,11 @@ footer {
 .about-section h2, .catalogue-section h2, .container h2 {
     font-family: Papyrus, fantasy;
     font-size: 3rem;
-    text-align: center; /* Center text in these sections */
+    text-align: center;
 }
 
 .about-section p, .container p {
-    text-align: center; /* Center text in these sections */
+    text-align: center;
 }
 
 .technique-section {
@@ -212,6 +235,6 @@ footer {
 
 .technique-description h2 {
     font-family: Papyrus, fantasy;
-    font-size: calc(2rem + 2vw); /* Responsive font size */
+    font-size: calc(2rem + 2vw);
     margin-bottom: 1rem;
 }
