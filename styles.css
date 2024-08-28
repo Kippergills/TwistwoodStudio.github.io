@@ -8,24 +8,17 @@ body {
     font-family: Papyrus, fantasy;
     margin: 0;
     padding: 0;
-    padding-top: 15rem;
+    padding-top: 15rem; /* Adjust based on header height */
     background-color: #000000;
     color: #333;
     font-size: calc(1vw + 1vh + 0.5vmin); /* Base font size responsive */
-}
-
-img {
-    max-width: 100%;
-    height: auto; /* Ensure images scale down on smaller screens */
 }
 
 /* Header Styles */
 header {
     background-image: url(images/background.png);
     background-size: cover; /* Ensure background covers the header */
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 15rem; /* Fixed height for consistency */
+    color: #000000;
     padding: 1rem 0;
     text-align: center;
     position: fixed;
@@ -40,12 +33,12 @@ header h1 {
     font-family: Papyrus, fantasy;
     font-weight: bolder;
     font-size: calc(2rem + 2vw); /* Responsive font size */
+    margin: 0; /* Remove margin */
 }
 
 nav {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 nav a {
@@ -64,13 +57,11 @@ nav a:hover {
 
 /* Container Styles */
 .container {
-    width: 90%; /* Adjusted for better margins on smaller screens */
-    max-width: 1200px;
+    width: 90%; /* Increase width to fit better on mobile */
     margin: 2rem auto;
     padding: 2rem;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center; /* Center content in container */
 }
 
 /* Footer Styles */
@@ -81,168 +72,14 @@ footer {
     color: #fff;
 }
 
-/* About Us and Contact Us Page */
+/* About Us and Contact Us Page Image Styles */
 .about-section img, .contact-section img {
-    width: 100%; /* Ensure images fit within their container */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%;
-}
-
-.about-section, .contact-section {
-    margin: 2rem 0; /* Margin for spacing */
-}
-
-.about-section h2, .contact-section h2 {
-    font-family: Papyrus, fantasy;
-    font-size: calc(1.5rem + 2vw); /* Responsive font size */
-    margin-bottom: 1rem;
-}
-
-.about-section p, .contact-section p {
-    font-size: calc(1rem + 0.5vw); /* Responsive font size */
-    line-height: 1.6; /* Improve readability */
-    margin: 1rem 0;
-}
-
-/* Welcome Section Styles */
-.welcome-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center; /* Center text inside welcome-section */
-}
-
-.welcome-text {
-    width: 100%;
-}
-
-.welcome-text h2 {
-    font-family: Papyrus, fantasy;
-    font-size: calc(2rem + 2vw); /* Responsive font size */
-    margin: 20px 0;
-}
-
-/* Image Container Styles */
-.image-container.single {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-container.single img {
     max-width: 100%;
     height: auto;
+    display: block; /* Ensure images are block level */
 }
 
-/* Row and Column Layout */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.column {
-    flex: 1 1 45%; /* Allow columns to take up to 45% of the container */
-    padding: 5px;
-    max-width: 100%; /* Ensure columns don't exceed the container width */
-}
-
-.column img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .column {
-        flex: 1 1 100%; /* Columns take full width on smaller screens */
-    }
-
-    header {
-        height: auto; /* Adjust header height for smaller screens */
-        padding: 1rem;
-    }
-
-    .technique-section {
-        flex-direction: column;
-    }
-
-    .technique-section:nth-of-type(even) {
-        flex-direction: column;
-    }
-
-    .technique-text, .technique-image, .technique-video {
-        width: 100%;
-        padding: 0.5rem;
-    }
-
-    .welcome-section h2, .about-section h2, .catalogue-section h2 {
-        font-size: 1.5rem; /* Adjust heading size */
-    }
-
-    .about-section p, .contact-section p {
-        font-size: 1rem; /* Adjust font size */
-    }
-}
-
-/* Catalogue Section Styles */
-.catalogue-section {
-    margin-top: 2rem;
-    text-align: center; /* Center catalogue section text */
-}
-
-.catalogue-dropdown {
-    margin-top: 1rem;
-}
-
-.catalogue-dropdown select {
-    font-size: 1rem;
-    padding: 0.5rem;
-    width: 100%;
-    max-width: 300px;
-}
-
-/* Image Grid Styles */
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns in grid */
-    gap: 1rem; /* Gap between images */
-    margin-top: 2rem;
-}
-
-/* Image Container Styles */
-.image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center; /* Center text in image container */
-}
-
-.image-container img {
-    width: 100%; /* Ensure images fit within their container */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent images from being too large */
-}
-
-.image-description {
-    font-size: 0.8rem;
-    color: #666;
-    text-align: center;
-    margin-top: 0.5rem;
-}
-
-/* Additional Styles for Specific Sections */
-.about-section h2, .catalogue-section h2, .container h2 {
-    font-family: Papyrus, fantasy;
-    font-size: 3rem;
-    text-align: center; /* Center text in these sections */
-}
-
-.about-section p, .container p {
-    text-align: center; /* Center text in these sections */
-}
-
+/* Techniques Page Styles */
 .technique-section {
     display: flex;
     flex-wrap: wrap;
@@ -250,7 +87,7 @@ footer {
 }
 
 .technique-section:nth-of-type(even) {
-    flex-direction: column;
+    flex-direction: row-reverse;
 }
 
 .technique-text {
@@ -273,4 +110,76 @@ footer {
     font-family: Papyrus, fantasy;
     font-size: calc(2rem + 2vw); /* Responsive font size */
     margin-bottom: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Header Styles */
+    header {
+        background-size: contain; /* Adjust background size for mobile */
+        padding: 1rem 0;
+    }
+
+    header h1 {
+        font-size: calc(1.5rem + 2vw); /* Adjust header font size for mobile */
+    }
+
+    nav a {
+        font-size: calc(0.8rem + 0.5vw); /* Adjust font size for mobile */
+        padding: 0.5rem; /* Adjust padding for mobile */
+    }
+
+    /* Container Styles */
+    .container {
+        width: 95%; /* Increase container width for mobile */
+        padding: 1rem;
+    }
+
+    /* Techniques Page Styles */
+    .technique-section {
+        flex-direction: column; /* Stack images and text for small screens */
+        text-align: center; /* Center text */
+    }
+
+    .technique-section:nth-of-type(even) {
+        flex-direction: column; /* Ensure even sections stack vertically */
+    }
+
+    .technique-text, .technique-image, .technique-video {
+        padding: 1rem;
+    }
+
+    /* Image Grid Styles */
+    .image-grid {
+        display: block; /* Ensure images stack in a single column */
+    }
+
+    .image-container {
+        display: block; /* Stack images and text in a single column */
+        margin: 0 auto; /* Center image container */
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* About Us and Contact Us Page Image Styles */
+    .about-section img, .contact-section img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Ensure images stay side by side on mobile if necessary */
+@media (max-width: 768px) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .column {
+        flex: 1 1 50%; /* Ensure columns take half width */
+        padding: 5px;
+    }
 }
