@@ -190,7 +190,6 @@ footer {
     margin-bottom: 2rem;
 }
 
-
 .technique-section:nth-of-type(even) {
     flex-direction: row-reverse;
 }
