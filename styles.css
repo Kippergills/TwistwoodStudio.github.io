@@ -17,8 +17,8 @@ body {
 /* Header Styles */
 header {
     background-image: url(images/background.png);
-    background-size: cover; /* Ensure the background image covers the area without stretching */
-    background-position: center; /* Center the background image */
+    background-size: cover; /* Adjust to cover the entire header */
+    background-position: center center; /* Center the image */
     color: #000000;
     padding: 1rem 0;
     text-align: center;
@@ -28,53 +28,54 @@ header {
     width: 100%;
     z-index: 1000;
     border-bottom: solid black;
-    height: auto; /* Adjust the height automatically */
 }
 
 header h1 {
     font-family: Papyrus, fantasy;
     font-weight: bolder;
-    font-size: calc(2rem + 2vw); /* Responsive font size */
-    margin: 0; /* Remove default margin */
+    font-size: calc(1.5rem + 1.5vw); /* Smaller, responsive font size */
+    margin: 0;
 }
 
 nav {
     display: flex;
     justify-content: center;
+    padding: 0.5rem 0;
 }
 
 nav a {
     color: #fff;
     font-family: Papyrus, fantasy;
     font-weight: bold;
-    padding: 1rem;
+    padding: 0.5rem 1rem; /* Smaller padding */
     text-decoration: none;
     transition: background-color 0.3s;
-    font-size: calc(1rem + 0.5vw); /* Responsive font size */
+    font-size: calc(0.8rem + 0.5vw); /* Smaller, responsive font size */
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-/* Mobile Adjustments for Header */
+/* Mobile Styles */
 @media (max-width: 768px) {
     header {
-        padding: 1rem 0.5rem; /* Reduce padding on mobile */
-        height: 20vh; /* Set a fixed height on mobile screens */
+        background-size: cover; /* Maintain cover for background image */
+        height: 200px; /* Adjust height for mobile */
+        background-attachment: fixed; /* Prevent background from repeating */
     }
 
     header h1 {
-        font-size: calc(1.5rem + 1vw); /* Smaller title size on mobile */
+        font-size: calc(1.2rem + 2vw); /* Smaller font size on mobile */
     }
 
     nav {
-        flex-direction: column; /* Stack buttons vertically */
+        padding: 0.5rem 0;
     }
 
     nav a {
-        font-size: calc(0.8rem + 0.5vw); /* Smaller buttons on mobile */
-        padding: 0.5rem; /* Smaller padding on mobile */
+        font-size: calc(0.6rem + 1vw); /* Smaller font size on mobile */
+        padding: 0.5rem; /* Adjust padding */
     }
 }
 
