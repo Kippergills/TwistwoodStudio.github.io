@@ -18,9 +18,9 @@ body {
 header {
     background-image: url(images/background.png);
     background-size: cover; /* Adjust background size */
-    background-position: center; /* Center background image */
+    background-position: center left; /* Position background image to keep tree visible */
     color: #000000;
-    padding: 1rem 0;
+    padding: 0.5rem 1rem; /* Adjust padding to make header narrower */
     text-align: center;
     position: fixed;
     top: 0;
@@ -33,7 +33,7 @@ header {
 header h1 {
     font-family: Papyrus, fantasy;
     font-weight: bolder;
-    font-size: calc(2rem + 2vw); /* Responsive font size */
+    font-size: calc(1.5rem + 1.5vw); /* Slightly smaller font size for better fit */
     margin: 0; /* Remove default margin */
 }
 
@@ -46,10 +46,10 @@ nav a {
     color: #fff;
     font-family: Papyrus, fantasy;
     font-weight: bold;
-    padding: 1rem;
+    padding: 0.5rem 1rem; /* Adjust padding for navigation links */
     text-decoration: none;
     transition: background-color 0.3s;
-    font-size: calc(1rem + 0.5vw); /* Responsive font size */
+    font-size: calc(0.8rem + 0.5vw); /* Responsive font size */
 }
 
 nav a:hover {
@@ -124,12 +124,16 @@ footer {
 
 /* Media Queries */
 @media (max-width: 768px) {
+    header {
+        padding: 0.5rem 0.5rem; /* Adjust padding for mobile to keep proportions */
+    }
+
     header h1 {
-        font-size: calc(1.5rem + 2vw); /* Smaller font size on mobile */
+        font-size: calc(1.2rem + 2vw); /* Adjust font size for mobile */
     }
 
     nav a {
-        font-size: calc(0.8rem + 0.5vw); /* Smaller font size on mobile */
+        font-size: calc(0.7rem + 0.5vw); /* Smaller font size for mobile */
         padding: 0.5rem; /* Adjust padding */
     }
 
