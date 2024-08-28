@@ -8,7 +8,7 @@ body {
     font-family: Papyrus, fantasy;
     margin: 0;
     padding: 0;
-    padding-top: 15rem; /* Adjust based on header height */
+    padding-top: 15rem;
     background-color: #000000;
     color: #333;
     font-size: calc(1vw + 1vh + 0.5vmin); /* Base font size responsive */
@@ -17,7 +17,8 @@ body {
 /* Header Styles */
 header {
     background-image: url(images/background.png);
-    background-size: cover; /* Ensure background covers the header */
+    background-size: cover; /* Ensure the background image covers the area without stretching */
+    background-position: center; /* Center the background image */
     color: #000000;
     padding: 1rem 0;
     text-align: center;
@@ -27,13 +28,14 @@ header {
     width: 100%;
     z-index: 1000;
     border-bottom: solid black;
+    height: auto; /* Adjust the height automatically */
 }
 
 header h1 {
     font-family: Papyrus, fantasy;
     font-weight: bolder;
     font-size: calc(2rem + 2vw); /* Responsive font size */
-    margin: 0; /* Remove margin */
+    margin: 0; /* Remove default margin */
 }
 
 nav {
@@ -55,13 +57,35 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* Mobile Adjustments for Header */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 0.5rem; /* Reduce padding on mobile */
+        height: 20vh; /* Set a fixed height on mobile screens */
+    }
+
+    header h1 {
+        font-size: calc(1.5rem + 1vw); /* Smaller title size on mobile */
+    }
+
+    nav {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    nav a {
+        font-size: calc(0.8rem + 0.5vw); /* Smaller buttons on mobile */
+        padding: 0.5rem; /* Smaller padding on mobile */
+    }
+}
+
 /* Container Styles */
 .container {
-    width: 90%; /* Increase width to fit better on mobile */
+    width: 80%;
     margin: 2rem auto;
     padding: 2rem;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center; /* Center content in container */
 }
 
 /* Footer Styles */
@@ -72,14 +96,13 @@ footer {
     color: #fff;
 }
 
-/* About Us and Contact Us Page Image Styles */
-.about-section img, .contact-section img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Ensure images are block level */
+/* Additional Styles */
+.image-container img {
+    max-width: 100%; /* Ensure images fit within their container */
+    height: auto; /* Maintain aspect ratio */
 }
 
-/* Techniques Page Styles */
+/* Techniques Section Styles */
 .technique-section {
     display: flex;
     flex-wrap: wrap;
@@ -110,76 +133,4 @@ footer {
     font-family: Papyrus, fantasy;
     font-size: calc(2rem + 2vw); /* Responsive font size */
     margin-bottom: 1rem;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    /* Header Styles */
-    header {
-        background-size: contain; /* Adjust background size for mobile */
-        padding: 1rem 0;
-    }
-
-    header h1 {
-        font-size: calc(1.5rem + 2vw); /* Adjust header font size for mobile */
-    }
-
-    nav a {
-        font-size: calc(0.8rem + 0.5vw); /* Adjust font size for mobile */
-        padding: 0.5rem; /* Adjust padding for mobile */
-    }
-
-    /* Container Styles */
-    .container {
-        width: 95%; /* Increase container width for mobile */
-        padding: 1rem;
-    }
-
-    /* Techniques Page Styles */
-    .technique-section {
-        flex-direction: column; /* Stack images and text for small screens */
-        text-align: center; /* Center text */
-    }
-
-    .technique-section:nth-of-type(even) {
-        flex-direction: column; /* Ensure even sections stack vertically */
-    }
-
-    .technique-text, .technique-image, .technique-video {
-        padding: 1rem;
-    }
-
-    /* Image Grid Styles */
-    .image-grid {
-        display: block; /* Ensure images stack in a single column */
-    }
-
-    .image-container {
-        display: block; /* Stack images and text in a single column */
-        margin: 0 auto; /* Center image container */
-    }
-
-    .image-container img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* About Us and Contact Us Page Image Styles */
-    .about-section img, .contact-section img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-/* Ensure images stay side by side on mobile if necessary */
-@media (max-width: 768px) {
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .column {
-        flex: 1 1 50%; /* Ensure columns take half width */
-        padding: 5px;
-    }
 }
